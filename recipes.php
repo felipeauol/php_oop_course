@@ -58,7 +58,7 @@ class Recipe
 		}
 		public function setYield($yield)
 		{
-			$this->yield = $yield;
+			$this->yield = "Makes " . $yield;
 		}
 		public function getYield()
 		{

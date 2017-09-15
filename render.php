@@ -18,11 +18,13 @@ class Render{
 				$output .= implode(", ", $recipe->getTags());
 				$output .= "<br/><br/>";
 				$output .= self::listIngredients($recipe->getIngredients());
-				$output .= "<br/><br/>";
+                $output .= "<br/>";
+                $output .= $recipe->getYield();
+                $output .= "<br/>";
 			foreach($recipe->getInstructions() as $inst){
-				$output .= "\n" . $inst;
+				$output .= "<br/>" . $inst;
 			}
-				$output .= $recipe->getYield();
+
 
 				return $output;
 		}
