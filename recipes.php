@@ -6,7 +6,7 @@ class Recipe
 		private $instructions;
 		private $yield;
 		private $tag = array();
-		private $source = "Felipe Oliveira";
+		private $source;
 		private $measurements = array(
         "tsp",
         "tbsp",
@@ -18,8 +18,18 @@ class Recipe
         "quart",
         "gallon"
     );
-		
-		public function setTitle($title)
+		public function __construct($title = null, $source = "Felipe Oliveira")
+        {
+            $this->setTitle($title);
+            $this->setSource($source);
+        }
+
+        public function __toString()
+        {
+            return $this->getTitle();
+        }
+
+    public function setTitle($title)
 		{
 			$this->title = ucwords($title);
 		}
