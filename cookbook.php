@@ -2,6 +2,7 @@
 
 include "recipes.php";
 include "render.php";
+include "inc/recipes.php";
 
 
 $recipe1 = new Recipe("Honey Hooch");
@@ -15,6 +16,7 @@ $recipe1->addInstruction("This is my second instruction");
 $recipe1->addTag("Breakfast");
 $recipe1->addTag("Main Course");
 
-$recipe2 = new Recipe("Kombucha","Betty Crocker");
-
 echo Render::displayRecipe($recipe1);
+
+echo "<br/><br/><br/>";
+echo Render::displayRecipe($belgian_waffles);
